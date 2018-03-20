@@ -7,9 +7,9 @@ package SomePrivateClasses;
 public class Rarity
 {
     String RarityName;
-    float Probability;
+    double Probability;
 
-    public Rarity(String RarityName,float Probability)
+    public Rarity(String RarityName,double Probability)
     {
         this.RarityName=RarityName;
         this.Probability=Probability;
