@@ -12,6 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class input extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -44,6 +51,39 @@ public class input extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        //---------------我自己的代码从这里开始--------------------
+
+        Spinner spinner=(Spinner) findViewById(R.id.spinner);
+        final String[] games={"炉石传说","命运：冠位指定（FGO）"};
+        spinner.setAdapter(new ArrayAdapter<String>(input.this,R.layout.support_simple_spinner_dropdown_item,games));
+        final Object[] objs=new Object[1];
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String gamename=games[position];
+                objs[0]=gamename;
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {}
+        });
+
+        Button button=(Button) findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                TextView text=(TextView) findViewById(R.id.text);
+                text.setText("玩你妈的"+objs[0]);
+            }
+        });
     }
 
     @Override

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gamename">
+        <item>炉石传说</item>
+        <item>命运：冠位指定（FGO）</item>
+    </string-array>
+</resources>
