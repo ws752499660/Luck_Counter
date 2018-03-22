@@ -1,5 +1,6 @@
 package club.quan9.luck_counter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,8 +81,15 @@ public class input extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                TextView text=(TextView) findViewById(R.id.text);
-                text.setText("玩你妈的"+objs[0]);
+                switch ((String)objs[0])
+                {
+                    case "炉石传说":
+                        Intent intent = new Intent(input.this, input_lushi.class);
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
     }
