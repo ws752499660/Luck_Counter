@@ -2,7 +2,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,6 +12,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请输入本次抽卡结果"
+                android:layout_gravity="center"
+                android:textSize="28dp"
+                android:textColor="#4facda"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -30,7 +41,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_white_num"/>
+                    android:id="@+id/ls_white_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969"/>
 
             </LinearLayout>
 
@@ -50,7 +70,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_blue_num"/>
+                    android:id="@+id/ls_blue_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969"/>
 
             </LinearLayout>
 
@@ -70,7 +99,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_purple_num"/>
+                    android:id="@+id/ls_purple_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969"/>
 
             </LinearLayout>
 
@@ -90,7 +128,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_gold_num"/>
+                    android:id="@+id/ls_gold_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969"/>
 
             </LinearLayout>
 
@@ -110,7 +157,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_whiteG_num"/>
+                    android:id="@+id/ls_whiteG_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969"/>
 
             </LinearLayout>
 
@@ -130,7 +186,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_blueG_num"/>
+                    android:id="@+id/ls_blueG_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969" />
 
             </LinearLayout>
 
@@ -150,7 +215,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_purpleG_num"/>
+                    android:id="@+id/ls_purpleG_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969"/>
 
             </LinearLayout>
 
@@ -170,7 +244,16 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ls_goldG_num"/>
+                    android:id="@+id/ls_goldG_num"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  张"
+                    android:textSize="22dp"
+                    android:textColor="#696969"/>
 
             </LinearLayout>
 

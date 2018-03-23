@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import club.quan9.luck_counter.SomePrivateClasses.BaseGame;
+import club.quan9.luck_counter.SomePrivateClasses.Calculation;
 
 public class input_lushi extends AppCompatActivity
 {
@@ -23,6 +27,9 @@ public class input_lushi extends AppCompatActivity
             public void onClick(View v)
             {
                 getnums();
+                BaseGame LS=new BaseGame("炉石传说");
+                double fix=calculateFix(LS);
+                Toast.makeText(input_lushi.this,((Double) fix).toString(),Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -37,5 +44,19 @@ public class input_lushi extends AppCompatActivity
         cardsNum[5]=Integer.valueOf(((EditText) findViewById(R.id.ls_blueG_num)).getText().toString());
         cardsNum[6]=Integer.valueOf(((EditText) findViewById(R.id.ls_purpleG_num)).getText().toString());
         cardsNum[7]=Integer.valueOf(((EditText) findViewById(R.id.ls_goldG_num)).getText().toString());
+    }
+
+    private double calculateFix(BaseGame LS)
+    {
+        Calculation calculation=new Calculation();
+        double AlterRP=0;
+        int i=0;
+        for(int num:cardsNum)
+        {
+            for(int j=0;j<num;j++)
+                AlterRP=AlterRP+calculation.AlterRP((LS.getRarity()[i].getProbability()));
+            i++;
+        }
+        return AlterRP;
     }
 }

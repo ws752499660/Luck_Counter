@@ -1,4 +1,4 @@
-package SomePrivateClasses;
+package club.quan9.luck_counter.SomePrivateClasses;
 
 import java.lang.Math;
 
@@ -8,26 +8,29 @@ import java.lang.Math;
 
 public class Calculation
 {
-    double rarity;
+    double rarities[];
     double RP;
     double nextRarity;
     final double RP_To_nextRaity_Coefficient=2.1;
 
-    public Calculation(double rarity,double RP)
+    public Calculation(double rarities[],double RP)
     {
-        this.rarity=rarity;
+        this.rarities=rarities;
         this.RP=RP;
-        this.rarity=0;
+        this.nextRarity=0;
     }
 
-    public Calculation()
+    public Calculation(double rarites[])
     {
-        this.rarity=0;
+        this.rarities=rarites;
         this.RP=0;
         this.nextRarity=0;
     }
 
-    public double AlterRP(double rarity,double RPold)
+    public Calculation()
+    {}
+
+    public double AlterRP(double rarity)
     {
         double fix=0;
         if(rarity>=0.5)     //可认为这样的事件是可以增加人品的
@@ -38,7 +41,6 @@ public class Calculation
         {
             fix=(Math.log10(rarity)-Math.log10(0.5)) *(1-rarity);
         }
-        RP=RP+fix;
         return fix;
     }
 
