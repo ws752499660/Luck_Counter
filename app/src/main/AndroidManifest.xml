@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".input_lushi"></activity>
+        <activity android:name=".input_lushi" />
+        <activity android:name=".LS_nextRarity"></activity>
     </application>
 
 </manifest>

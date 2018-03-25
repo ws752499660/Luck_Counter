@@ -34,7 +34,7 @@ public class ArrayAndString
     {
         double[] doublea=new double[values.length];
         for(int i=0;i<values.length;i++)
-            doublea[i]=Integer.valueOf(values[i]);
+            doublea[i]=Double.valueOf(values[i]);
         return doublea;
     }
 }

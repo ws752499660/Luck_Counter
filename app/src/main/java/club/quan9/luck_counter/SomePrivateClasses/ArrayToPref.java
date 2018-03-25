@@ -29,7 +29,7 @@ public class ArrayToPref
     {
         String[] str=null;
         String values;
-        values=pref.getString(key,"0");
+        values=pref.getString(key,"-1");
         str=values.split(regularEx);
         return str;
     }

@@ -15,7 +15,7 @@ public class Calculation
     double rarities[];
     double RP;
     double nextRarity[];
-    final double RP_To_nextRaity_Coefficient=2.1;
+    final double RP_To_nextRaity_Coefficient=1.25;  //1.25 RP(-7~7)
 
     public Calculation(double rarities[],double RP)
     {
@@ -58,7 +58,13 @@ public class Calculation
     {
         nextRarity=new double[OriginRarity.length];
         for(int i=0;i<OriginRarity.length;i++)
-            nextRarity[i]=Math.pow(RP_To_nextRaity_Coefficient,RP)*OriginRarity[i];
+        {
+            if(rarities[i]<0.5)
+                nextRarity[i]=Math.pow(RP_To_nextRaity_Coefficient,RP)*OriginRarity[i];
+            else
+                nextRarity[i]=OriginRarity[i];
+        }
+
     }
 
     public void ApplyForPref(SharedPreferences.Editor editor)

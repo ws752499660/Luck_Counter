@@ -1,5 +1,6 @@
 package club.quan9.luck_counter;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class input_lushi extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_lushi);
         pref=getSharedPreferences("savePlace",MODE_PRIVATE);
+        editor=getSharedPreferences("savePlace",MODE_PRIVATE).edit();
         Button button=(Button) findViewById(R.id.ls_finish_input_button);
         button.setOnClickListener(new View.OnClickListener()
         {
@@ -37,6 +39,8 @@ public class input_lushi extends AppCompatActivity
                 calculate(LS);
                 saveNextRarity(calculation.getNextRarity());
                 saveCardsNum();
+                Intent intent=new Intent(input_lushi.this,LS_nextRarity.class);
+                startActivity(intent);
             }
         });
     }
@@ -72,7 +76,6 @@ public class input_lushi extends AppCompatActivity
         calculation=new Calculation(LS.getRarity(),pref.getFloat("RP",0));
         calculation.CalculateFix(cardsNum);
         calculation.Calculate_nextRarity(LS.getRarity());
-        editor=getSharedPreferences("savePlace",MODE_PRIVATE).edit();
         calculation.ApplyForPref(editor);
     }
 
@@ -84,7 +87,11 @@ public class input_lushi extends AppCompatActivity
     private void saveCardsNum()     //存储本次抽卡的情况
     {
         int[] cardsNumSum=new int[8];
-        int[] cardsNumOld=ArrayAndString.StringToInt((ArrayToPref.getArrary("LS_cardsnum_sum",pref)));
+        int[] cardsNumOld;
+        if(ArrayAndString.StringToInt((ArrayToPref.getArrary("LS_cardsnum_sum",pref)))[0]==-1)
+            cardsNumOld=new int[8];
+        else
+            cardsNumOld=ArrayAndString.StringToInt((ArrayToPref.getArrary("LS_cardsnum_sum",pref)));
         for(int i=0;i<8;i++)
             cardsNumSum[i]=cardsNum[i]+cardsNumOld[i];
         ArrayToPref.putArrary("LS_cardsnum_sum", ArrayAndString.intToString(cardsNumSum),pref,editor);
