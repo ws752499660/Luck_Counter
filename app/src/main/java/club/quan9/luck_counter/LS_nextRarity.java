@@ -1,8 +1,11 @@
 package club.quan9.luck_counter;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import club.quan9.luck_counter.SomePrivateClasses.ArrayAndString;
@@ -23,6 +26,16 @@ public class LS_nextRarity extends AppCompatActivity
         editor=getSharedPreferences("savePlace",MODE_PRIVATE).edit();
         pref=getSharedPreferences("savePlace",MODE_PRIVATE);
         setText();
+        Button button=(Button) findViewById(R.id.ls_check_history);
+        button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent=new Intent(LS_nextRarity.this,LS_history.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setText()
@@ -30,7 +43,7 @@ public class LS_nextRarity extends AppCompatActivity
         double nextRarity[];
         nextRarity= ArrayAndString.StringToDouble(ArrayToPref.getArrary("LS_nextRarity",pref));
         TextView[] t=new TextView[8];
-        t[0]=(TextView) findViewById(R.id.nextWhite);
+        t[0]=null;
         t[1]=(TextView) findViewById(R.id.nextBlue);
         t[2]=(TextView) findViewById(R.id.nextPurple);
         t[3]=(TextView) findViewById(R.id.nextGold);
@@ -38,7 +51,7 @@ public class LS_nextRarity extends AppCompatActivity
         t[5]=(TextView) findViewById(R.id.nextBlueG);
         t[6]=(TextView) findViewById(R.id.nextPurpleG);
         t[7]=(TextView) findViewById(R.id.nextGoldG);
-        for(int i=0;i<8;i++)
+        for(int i=1;i<8;i++)
         {
             double fix=nextRarity[i] - LS.getRarity()[i];
             if (fix > 0)

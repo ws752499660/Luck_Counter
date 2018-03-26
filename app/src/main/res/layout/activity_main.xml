@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="club.quan9.luck_counter.input"
-    tools:showIn="@layout/app_bar_input">
+    tools:context="club.quan9.luck_counter.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
