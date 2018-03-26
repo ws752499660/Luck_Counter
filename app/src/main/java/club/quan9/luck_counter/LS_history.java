@@ -36,5 +36,7 @@ public class LS_history extends AppCompatActivity
         text[7]=(TextView) findViewById(R.id.ls_goldG_Hnum);
         for(int i=0;i<8;i++)
             text[i].setText(((Integer) cardsnum[i]).toString());
+        TextView RP=(TextView) findViewById(R.id.RP);
+        RP.setText(((Float) pref.getFloat("RP",0)).toString());
     }
 }

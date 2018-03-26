@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ public class LS_nextRarity extends AppCompatActivity
     private SharedPreferences.Editor editor;
     private SharedPreferences pref;
     private BaseGame LS=new BaseGame("炉石传说");
+    final private String TAG="LS_nextRarity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -53,7 +55,9 @@ public class LS_nextRarity extends AppCompatActivity
         t[7]=(TextView) findViewById(R.id.nextGoldG);
         for(int i=1;i<8;i++)
         {
+            double fix1=nextRarity[i]/LS.getRarity()[i];
             double fix=nextRarity[i] - LS.getRarity()[i];
+            Log.d(TAG, ((Double) fix1).toString());
             if (fix > 0)
                 t[i].setText("概率  +"+fix*100+"%");
             else
