@@ -58,10 +58,11 @@ public class LS_nextRarity extends AppCompatActivity
             double fix1=nextRarity[i]/LS.getRarity()[i];
             double fix=nextRarity[i] - LS.getRarity()[i];
             Log.d(TAG, ((Double) fix1).toString());
+            fix=fix*100;
             if (fix > 0)
-                t[i].setText("概率  +"+fix*100+"%");
+                t[i].setText("概率  +"+String.format("%.2f",fix)+"%");
             else
-                t[i].setText("概率  "+fix*100+"%");
+                t[i].setText("概率  "+String.format("%.2f",fix)+"%");
         }
     }
 }

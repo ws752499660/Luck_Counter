@@ -89,7 +89,7 @@ public class input_lushi extends AppCompatActivity
         int[] cardsNumSum=new int[8];
         int[] cardsNumOld;
         if(ArrayAndString.StringToInt((ArrayToPref.getArrary("LS_cardsnum_sum",pref)))[0]==-1)
-            cardsNumOld=new int[8];
+            cardsNumOld=new int[8];     //0
         else
             cardsNumOld=ArrayAndString.StringToInt((ArrayToPref.getArrary("LS_cardsnum_sum",pref)));
         for(int i=0;i<8;i++)

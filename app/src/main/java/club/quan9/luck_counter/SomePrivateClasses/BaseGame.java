@@ -16,7 +16,7 @@ public class BaseGame
             case "炉石传说":
                 this.GameName=GameName;
                 rarity=new double[8];
-                rarity[0]=0.75;     //白
+                rarity[0]=1.1;     //白
                 rarity[1]=0.25;      //蓝
                 rarity[2]=0.04;    //紫
                 rarity[3]=0.01;      //橙
